@@ -50,6 +50,12 @@ else
 fi
 
 unzip -oq theme.zip
+
+if [[ ! -d "$WORK_DIR/theme" || ! -f "$WORK_DIR/install.sh" ]]; then
+    echo -e "${RED}Downloaded theme package has an invalid structure.${NC}"
+    exit 1
+fi
+
 chmod +x install.sh
 bash install.sh
 
