@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers; use Pterodactyl\Models\Permission; use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest; class TailConsoleRequest extends ClientApiRequest { public function permission(): string { return Permission::ACTION_WEBSOCKET_CONNECT; } public function rules(): array { return [ 'lines' => 'sometimes|integer|min:1|max:100', ]; } } 

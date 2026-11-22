@@ -1,0 +1,2158 @@
+
+:root {
+    --font-sans: 'Montserrat Variable', 'Montserrat', 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Montserrat Variable', 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+
+    --surface-base: rgb(11 13 18);
+    --surface-card: rgb(15 18 25);
+    --surface-raised: rgb(22 26 35);
+    --surface-overlay: rgb(30 35 46);
+
+    --line-rgb: rgb(255 255 255);
+
+    --ink: rgb(226 232 240);
+    --ink-muted: rgb(148 163 184);
+    --ink-faint: rgb(169 171 173);
+    --ink-inverse: rgb(18 32 44);
+
+    --accent: rgb(71 165 231);
+    --accent-alt: rgb(139 92 246);
+    --accent-glow: rgb(232 121 249);
+
+    --success: rgb(163 230 53);
+    --warning: rgb(251 191 36);
+    --danger: rgb(244 63 94);
+    --status-offline: rgb(100 116 139);
+
+    --chart-1: rgb(61 147 212);
+    --chart-2: rgb(22 163 74);
+
+    --hud-surface: var(--surface-card);
+
+    --btn: rgb(71 165 231);
+    --btn-ink: rgb(11 13 18);
+
+    --shadow-panel: none;
+
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+
+    --sa-card-border: transparent;
+}
+
+:root.light {
+    --surface-base: rgb(255 255 255);
+    --surface-card: rgb(244 246 249);
+    --surface-raised: rgb(241 243 247);
+    --surface-overlay: rgb(226 231 238);
+
+    --line-rgb: rgb(15 23 42);
+
+    --ink: rgb(15 23 42);
+    --ink-muted: rgb(71 85 105);
+    --ink-faint: rgb(100 116 139);
+    --ink-inverse: rgb(255 255 255);
+
+    --hud-surface: rgb(28 28 34);
+    --accent-alt: rgb(124 58 237);
+    --accent-glow: rgb(192 38 211);
+
+    --success: rgb(34 197 94);
+    --warning: rgb(180 83 9);
+    --danger: rgb(225 29 72);
+    --status-offline: rgb(225 29 72);
+
+    --chart-1: rgb(42 120 214);
+    --chart-2: rgb(15 143 95);
+
+    --btn: rgb(93 180 251);
+    --btn-ink: rgb(255 255 255);
+
+    --shadow-panel: 0 4px 16px -6px rgb(15 23 42 / 0.12);
+}
+
+.stark-admin {
+    --sa-r-sm: var(--radius-lg);
+    --sa-r: var(--radius-xl);
+    --sa-r-lg: var(--radius-2xl);
+    --sa-r-xl: var(--radius-3xl);
+
+    --sa-line: rgb(from var(--line-rgb) r g b / 0.08);
+    --sa-line-strong: rgb(from var(--line-rgb) r g b / 0.14);
+    --sa-field: rgb(from var(--surface-raised) r g b / 0.8);
+    --sa-field-edge: rgb(from var(--ink-faint) r g b / var(--field-edge, 0.12));
+    --sa-hover: rgb(from var(--ink) r g b / 0.05);
+    --sa-tint: rgb(from var(--accent) r g b / 0.12);
+
+    --sa-field-hover: rgb(from var(--ink-faint) r g b / 0.45);
+    --sa-tint-edge: rgb(from var(--accent) r g b / 0.35);
+    --sa-ring: rgb(from var(--accent) r g b / 0.35);
+    --sa-code: rgb(from var(--ink) r g b / 0.06);
+    --sa-grid: rgb(from var(--ink) r g b / 0.08);
+    --sa-track: rgb(from var(--ink) r g b / 0.1);
+    --sa-ref: rgb(from var(--ink) r g b / 0.45);
+    --sa-cross: rgb(from var(--ink) r g b / 0.35);
+    --sa-free: rgb(from var(--ink) r g b / 0.14);
+    --sa-ring-track: rgb(from var(--ink) r g b / 0.05);
+
+    --sa-page: var(--surface-base);
+    --sa-box: var(--surface-card);
+    --sa-well: var(--surface-raised);
+    --sa-well-hover: var(--surface-overlay);
+    --sa-pop: var(--surface-overlay);
+
+    --sa-strong: var(--ink);
+    --sa-ink: var(--ink);
+    --sa-muted: var(--ink-muted);
+    --sa-faint: var(--ink-faint);
+
+    --sa-accent: var(--accent);
+    --sa-accent-hover: rgb(from var(--accent) r g b / 0.8);
+    --sa-on-accent: rgb(from var(--accent) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255));
+    --sa-chart-1: var(--chart-1);
+    --sa-chart-bg: var(--surface-base);
+    --sa-chart-soft: color-mix(in srgb, var(--chart-1) 55%, rgb(255 255 255));
+
+    --sa-success: var(--success);
+    --sa-warning: var(--warning);
+    --sa-danger: var(--danger);
+
+    --sa-good-bg: rgb(from var(--success) r g b / 0.16);
+    --sa-good-ink: var(--success);
+    --sa-good-edge: rgb(from var(--success) r g b / 0.35);
+    --sa-warn-bg: rgb(from var(--warning) r g b / 0.16);
+    --sa-warn-ink: var(--warning);
+    --sa-warn-edge: rgb(from var(--warning) r g b / 0.35);
+    --sa-crit-bg: rgb(from var(--danger) r g b / 0.16);
+    --sa-crit-ink: var(--danger);
+    --sa-idle-bg: var(--surface-overlay);
+    --sa-idle-ink: var(--ink-muted);
+
+    color-scheme: dark;
+}
+
+.stark-admin.light {
+    --sa-hover: rgb(from var(--ink) r g b / 0.04);
+    --sa-well: var(--surface-base);
+    --sa-well-hover: var(--surface-raised);
+    --sa-pop: var(--surface-base);
+
+    color-scheme: light;
+}
+
+.stark-admin body {
+    background: var(--surface-card);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+:where(.stark-admin) :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .tooltip, .popover),
+.stark-admin .main-header .logo {
+    font-family: var(--font-sans);
+}
+
+:where(.stark-admin) :is(code, kbd, pre, samp) {
+    font-family: var(--font-mono);
+}
+
+.stark-admin ::selection {
+    background: rgb(from var(--accent) r g b / 0.3);
+}
+
+.stark-admin * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-overlay) transparent;
+}
+
+:where(.stark-admin) a {
+    color: var(--accent);
+}
+
+:where(.stark-admin) a:is(:hover, :focus) {
+    color: var(--sa-accent-hover);
+}
+
+:where(.stark-admin) hr {
+    border-top-color: var(--sa-line);
+}
+
+
+.stark-admin .skin-blue :is(.wrapper, .main-sidebar, .left-side) {
+    background-color: var(--surface-card);
+    box-shadow: none;
+}
+
+.stark-admin .fixed .main-header {
+    box-shadow: none;
+}
+
+.stark-admin .skin-blue .main-header :is(.logo, .navbar) {
+    background-color: var(--surface-card);
+    color: var(--ink);
+}
+
+.stark-admin .skin-blue .main-header .logo {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+}
+
+.stark-admin .skin-blue .main-header .logo:hover {
+    background-color: var(--surface-card);
+}
+
+.stark-admin .main-header .logo .stark-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.stark-admin .main-header .logo :is(.stark-logo img, .stark-logo-mark) {
+    max-width: 100%;
+    max-height: 28px;
+}
+
+.stark-admin .main-header .logo :is(.stark-logo-light, .stark-logo-mark),
+.stark-admin.light .main-header .logo .stark-logo-dark {
+    display: none;
+}
+
+.stark-admin.light .main-header .logo .stark-logo-light {
+    display: inline;
+}
+
+@media (min-width: 768px) {
+    .stark-admin .sidebar-mini.sidebar-collapse .main-header .logo {
+        padding: 0 9px;
+    }
+
+    .stark-admin .sidebar-mini.sidebar-collapse .main-header .logo .stark-logo {
+        display: none;
+    }
+
+    .stark-admin .sidebar-mini.sidebar-collapse .main-header .logo .stark-logo-mark {
+        display: inline;
+        vertical-align: middle;
+    }
+}
+
+.stark-admin .skin-blue .main-header .navbar :is(.nav > li > a, .sidebar-toggle) {
+    color: var(--ink-muted);
+}
+
+.stark-admin .skin-blue .main-header .navbar :is(.nav > li > a, .sidebar-toggle):is(:hover, :focus, :active) {
+    color: var(--ink);
+    background: var(--sa-hover);
+}
+
+.stark-admin .main-header .navbar .user-image {
+    border-radius: 999px;
+}
+
+.stark-admin .stark-mode-switch .fa-moon-o,
+.stark-admin.light .stark-mode-switch .fa-sun-o {
+    display: none;
+}
+
+.stark-admin.light .stark-mode-switch .fa-moon-o {
+    display: inline-block;
+}
+
+.stark-admin .skin-blue .content-wrapper {
+    background-color: var(--surface-base);
+}
+
+.stark-admin .skin-blue .content-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 50px;
+    left: 230px;
+    width: var(--sa-r-xl);
+    height: var(--sa-r-xl);
+    background: radial-gradient(circle at 100% 100%, transparent calc(var(--sa-r-xl) - 0.5px), var(--surface-card) var(--sa-r-xl));
+    pointer-events: none;
+    transition: left 0.3s ease-in-out;
+    z-index: 1029;
+}
+
+@media (min-width: 768px) {
+    .stark-admin .skin-blue.sidebar-mini.sidebar-collapse .content-wrapper::before {
+        left: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .stark-admin .skin-blue .content-wrapper::before {
+        top: 100px;
+        left: 0;
+    }
+}
+
+.stark-admin .main-footer {
+    background: var(--surface-base);
+    border-top: 1px solid var(--sa-line);
+    color: var(--ink-faint);
+}
+
+.stark-admin .main-footer a {
+    color: var(--ink-muted);
+}
+
+
+.stark-admin .skin-blue .sidebar-menu > li.header {
+    padding: 18px 25px 6px;
+    background: transparent;
+    color: var(--ink-faint);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.stark-admin .skin-blue .sidebar-menu > li > a {
+    margin: 2px 12px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: var(--sa-r);
+    color: var(--ink-muted);
+    font-weight: 500;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.stark-admin .skin-blue .sidebar-menu > li > a > .fa {
+    width: 22px;
+    color: var(--ink-faint);
+}
+
+.stark-admin .skin-blue .sidebar-menu > li:hover > a {
+    background: var(--sa-hover);
+    color: var(--ink);
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.active > a {
+    background: var(--sa-tint);
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.active > a > .fa {
+    color: var(--accent);
+}
+
+
+.stark-admin[data-sa-active='pill'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link) > a {
+    background: rgb(from var(--accent) r g b / 0.2);
+}
+
+.stark-admin[data-sa-active='glow'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link) > a {
+    box-shadow: inset 0 0 0 1px rgb(from var(--accent) r g b / 0.4);
+}
+
+.stark-admin[data-sa-active='gradient'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link) > a {
+    background: linear-gradient(to right, rgb(from var(--accent) r g b / 0.25), transparent);
+}
+
+.stark-admin:is([data-sa-active='underline'], [data-sa-active='dot']) .skin-blue .sidebar-menu > li.active:not(.stark-addons-link) > a {
+    background: transparent;
+}
+
+.stark-admin[data-sa-active='solid'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link) > a {
+    background: var(--accent);
+    color: var(--ink-inverse);
+}
+
+.stark-admin[data-sa-active='solid'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link) > a > .fa {
+    color: var(--ink-inverse);
+}
+
+.stark-admin:is([data-sa-active='bar'], [data-sa-active='underline'], [data-sa-active='dot']) .skin-blue .sidebar-menu > li.active:not(.stark-addons-link)::after {
+    content: '';
+    position: absolute;
+    border-radius: 999px;
+    background: var(--accent);
+    pointer-events: none;
+}
+
+.stark-admin[data-sa-active='bar'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link)::after {
+    top: 50%;
+    left: 0;
+    width: 4px;
+    height: 24px;
+    border-radius: 0 999px 999px 0;
+    transform: translateY(-50%);
+}
+
+.stark-admin[data-sa-active='underline'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link)::after {
+    left: 24px;
+    right: 24px;
+    bottom: 5px;
+    height: 2px;
+}
+
+.stark-admin[data-sa-active='dot'] .skin-blue .sidebar-menu > li.active:not(.stark-addons-link)::after {
+    top: 50%;
+    right: 26px;
+    width: 6px;
+    height: 6px;
+    transform: translateY(-50%);
+}
+
+
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a {
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(120% 140% at 0% 0%, rgb(255 255 255 / 0.22), transparent 55%),
+        linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 62%, rgb(8 14 40)));
+    box-shadow:
+        0 10px 24px -14px rgb(from var(--accent) r g b / 0.9),
+        inset 0 1px 0 rgb(255 255 255 / 0.18);
+    color: rgb(255 255 255);
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a > .fa {
+    color: rgb(255 255 255);
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a::before,
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-repeat: repeat-x;
+    pointer-events: none;
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24' preserveAspectRatio='none'%3E%3Cpath d='M0 12 C20 2 40 2 60 12 S100 22 120 12 V24 H0 Z' fill='%23fff' fill-opacity='.2'/%3E%3C/svg%3E");
+    background-size: 120px 58%;
+    background-position: 0 100%;
+    animation: sa-wave 7s linear infinite;
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 24' preserveAspectRatio='none'%3E%3Cpath d='M0 14 C15 6 30 6 45 14 S75 22 90 14 V24 H0 Z' fill='%23fff' fill-opacity='.15'/%3E%3C/svg%3E");
+    background-size: 90px 40%;
+    background-position: 0 100%;
+    animation: sa-wave-back 4.5s linear infinite;
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link:hover > a {
+    background:
+        radial-gradient(120% 140% at 0% 0%, rgb(255 255 255 / 0.3), transparent 55%),
+        linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 62%, rgb(8 14 40)));
+    color: rgb(255 255 255);
+}
+
+.stark-admin .skin-blue .sidebar-menu > li.stark-addons-link.active > a {
+    box-shadow:
+        0 10px 26px -12px rgb(from var(--accent) r g b),
+        inset 0 0 0 1px rgb(255 255 255 / 0.28);
+}
+
+@keyframes sa-wave {
+    to {
+        background-position: 120px 100%;
+    }
+}
+
+@keyframes sa-wave-back {
+    to {
+        background-position: -90px 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a::before,
+    .stark-admin .skin-blue .sidebar-menu > li.stark-addons-link > a::after {
+        animation: none;
+    }
+}
+
+.stark-admin .skin-blue.sidebar-mini.sidebar-collapse .sidebar-menu > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px 7px;
+    padding: 10px 0;
+}
+
+.stark-admin .skin-blue.sidebar-mini.sidebar-collapse .sidebar-menu > li > a > .fa {
+    width: auto;
+    margin: 0;
+    text-align: center;
+}
+
+.stark-admin .skin-blue.sidebar-mini.sidebar-collapse .sidebar-menu > li.active::after {
+    content: none;
+}
+
+.stark-admin .skin-blue.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right) {
+    top: 0;
+    left: calc(100% + 7px);
+    margin-left: 0;
+    padding: 10px 14px;
+    border-radius: var(--sa-r);
+    background: var(--surface-overlay);
+    color: var(--ink);
+    box-shadow: 0 12px 32px -12px rgb(0 0 0 / 0.5);
+}
+
+
+.stark-admin .content-header > h1 {
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.stark-admin .content-header > h1 > small,
+.stark-admin :is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) :is(small, .small) {
+    color: var(--ink-muted);
+}
+
+.stark-admin .content-header > h1 > small {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.stark-admin .content-header > .breadcrumb > li,
+.stark-admin .content-header > .breadcrumb > li > a,
+.stark-admin .content-header > .breadcrumb > li + li::before {
+    color: var(--ink-faint);
+}
+
+.stark-admin .content-header > .breadcrumb > li.active,
+.stark-admin .content-header > .breadcrumb > li > a:hover {
+    color: var(--ink-muted);
+}
+
+@media (max-width: 991px) {
+    .stark-admin .content-header > .breadcrumb {
+        background: var(--surface-card) !important;
+        border-radius: var(--sa-r);
+    }
+}
+
+
+.stark-admin .box,
+.stark-admin .nav-tabs-custom,
+.stark-admin .info-box,
+.stark-admin .panel {
+    background: var(--surface-card);
+    border: 1px solid var(--sa-card-border);
+    border-radius: var(--sa-r-lg);
+    box-shadow: var(--shadow-panel) !important;
+    color: var(--ink);
+}
+
+.stark-admin .box.box-solid {
+    border: 1px solid var(--sa-card-border);
+}
+
+.stark-admin .box.box-solid > .box-header {
+    background: transparent !important;
+    color: var(--ink) !important;
+}
+
+.stark-admin .box-header {
+    padding: 12px 15px;
+    background: transparent;
+    color: var(--ink);
+    border-radius: var(--sa-r-lg) var(--sa-r-lg) 0 0;
+}
+
+.stark-admin .box-header.with-border {
+    border-bottom: 1px solid var(--sa-line);
+}
+
+.stark-admin .box-header .box-title {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.stark-admin .box-header > .box-tools {
+    top: 7px;
+}
+
+.stark-admin .box-footer {
+    background: transparent;
+    border-top: 1px solid var(--sa-line);
+    border-radius: 0 0 var(--sa-r-lg) var(--sa-r-lg);
+}
+
+.stark-admin .btn-box-tool {
+    color: var(--ink-faint);
+}
+
+.stark-admin .btn-box-tool:hover,
+.stark-admin .open .btn-box-tool {
+    color: var(--ink);
+}
+
+.stark-admin :is(.box .overlay, .overlay-wrapper .overlay) {
+    background: rgb(from var(--surface-card) r g b / 0.7);
+    border-radius: var(--sa-r-lg);
+}
+
+.stark-admin .well {
+    background: var(--surface-raised);
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r);
+    box-shadow: none;
+}
+
+.stark-admin .panel > .panel-heading {
+    background: transparent;
+    border-color: var(--sa-line);
+    color: var(--ink);
+}
+
+.stark-admin .panel > .panel-footer {
+    background: transparent;
+    border-color: var(--sa-line);
+}
+
+.stark-admin .info-box-icon {
+    border-radius: var(--sa-r-lg) 0 0 var(--sa-r-lg);
+}
+
+.stark-admin .small-box {
+    border-radius: var(--sa-r-lg);
+    overflow: hidden;
+}
+
+.stark-admin .small-box.bg-gray :is(h3, p, .icon) {
+    color: var(--ink);
+}
+
+.stark-admin .small-box.bg-gray .small-box-footer {
+    background: var(--sa-hover);
+    color: var(--ink-muted);
+}
+
+.stark-admin .info-box:is(.bg-green, .bg-yellow, .bg-orange, .bg-red, .bg-aqua, .bg-blue, .bg-light-blue) {
+    --sa-tone: var(--accent);
+
+    background: var(--surface-card) !important;
+    color: var(--ink) !important;
+}
+
+.stark-admin .info-box.bg-green {
+    --sa-tone: var(--success);
+}
+
+.stark-admin .info-box:is(.bg-yellow, .bg-orange) {
+    --sa-tone: var(--warning);
+}
+
+.stark-admin .info-box.bg-red {
+    --sa-tone: var(--danger);
+}
+
+.stark-admin .info-box[class*='bg-'] .info-box-icon {
+    background: rgb(from var(--sa-tone) r g b / 0.15);
+    color: var(--sa-tone);
+}
+
+.stark-admin .info-box .progress {
+    background: var(--surface-overlay);
+}
+
+.stark-admin .info-box[class*='bg-'] .progress .progress-bar {
+    background: var(--sa-tone);
+}
+
+.stark-admin .info-box .progress-description {
+    color: var(--ink-muted);
+}
+
+
+.stark-admin .text-muted,
+.stark-admin .help-block {
+    color: var(--ink-muted) !important;
+}
+
+.stark-admin .text-gray,
+.stark-admin label.control-label > span.field-optional::before {
+    color: var(--ink-faint) !important;
+}
+
+.stark-admin :is(.text-danger, .text-red),
+.stark-admin label.control-label > span,
+.stark-admin label.control-label > span.field-required::before {
+    color: var(--danger) !important;
+}
+
+.stark-admin :is(.text-success, .text-green) {
+    color: var(--success) !important;
+}
+
+.stark-admin :is(.text-warning, .text-yellow, .text-orange) {
+    color: var(--warning) !important;
+}
+
+.stark-admin :is(.text-primary, .text-info, .text-blue, .text-aqua, .text-light-blue) {
+    color: var(--accent) !important;
+}
+
+:where(.stark-admin) code {
+    padding: 1px 5px;
+    background: var(--sa-code);
+    border: 1px solid var(--sa-line);
+    border-radius: 6px;
+    color: var(--ink);
+}
+
+:where(.stark-admin) pre {
+    background: var(--surface-raised);
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r);
+    color: var(--ink);
+}
+
+:where(.stark-admin) pre code {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+
+.stark-admin .table {
+    color: var(--ink);
+}
+
+.stark-admin .table > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+    border-top: 1px solid var(--sa-line);
+}
+
+.stark-admin .table > thead > tr > th {
+    border-bottom: 1px solid var(--sa-line);
+    color: var(--ink-muted);
+    font-weight: 600;
+}
+
+.stark-admin .table > :first-child > tr:first-child > :is(th, td) {
+    border-top: 0;
+}
+
+.stark-admin .table-bordered,
+.stark-admin .table-bordered > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+    border-color: var(--sa-line);
+}
+
+.stark-admin .table-striped > tbody > tr:nth-of-type(odd) {
+    background: rgb(from var(--ink) r g b / 0.025);
+}
+
+.stark-admin .table-hover > tbody > tr:hover,
+.stark-admin tr:hover + tr.server-description {
+    background: var(--sa-hover) !important;
+}
+
+.stark-admin .table > :is(thead, tbody, tfoot) > tr:is(.active, .success, .info, .warning, .danger) > :is(td, th),
+.stark-admin .table > :is(thead, tbody, tfoot) > tr > :is(td, th):is(.active, .success, .info, .warning, .danger) {
+    background: var(--sa-hover);
+}
+
+.stark-admin .table > :is(thead, tbody, tfoot) > tr:is(.success) > :is(td, th) {
+    background: rgb(from var(--success) r g b / 0.1);
+}
+
+.stark-admin .table > :is(thead, tbody, tfoot) > tr:is(.info) > :is(td, th) {
+    background: rgb(from var(--accent) r g b / 0.1);
+}
+
+.stark-admin .table > :is(thead, tbody, tfoot) > tr:is(.warning) > :is(td, th) {
+    background: rgb(from var(--warning) r g b / 0.1);
+}
+
+.stark-admin .table > :is(thead, tbody, tfoot) > tr:is(.danger) > :is(td, th) {
+    background: rgb(from var(--danger) r g b / 0.1);
+}
+
+
+.stark-admin .form-control,
+.stark-admin :is(input, textarea).form-control {
+    background-color: var(--sa-field);
+    border: 1px solid var(--sa-field-edge);
+    border-radius: var(--sa-r);
+    box-shadow: none;
+    color: var(--ink);
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+.stark-admin .form-control:focus {
+    background-color: var(--surface-raised);
+    border-color: rgb(from var(--accent) r g b / 0.6);
+    box-shadow: none;
+}
+
+.stark-admin .form-control::placeholder {
+    color: var(--ink-faint);
+    opacity: 0.8;
+}
+
+.stark-admin .form-control:is([disabled], [readonly]),
+.stark-admin fieldset[disabled] .form-control {
+    background-color: rgb(from var(--surface-overlay) r g b / 0.45);
+    color: var(--ink-muted);
+}
+
+.stark-admin input.form-autocomplete-stop[readonly] {
+    background-color: var(--sa-field);
+    color: var(--ink);
+}
+
+.stark-admin select.form-control option,
+.stark-admin select.form-control optgroup {
+    background: var(--surface-raised);
+    color: var(--ink);
+}
+
+.stark-admin .input-group .input-group-addon {
+    background-color: var(--surface-raised);
+    border-color: var(--sa-field-edge);
+    color: var(--ink-muted);
+}
+
+.stark-admin .input-group .input-group-addon:first-child {
+    border-radius: var(--sa-r) 0 0 var(--sa-r);
+}
+
+.stark-admin .input-group .input-group-addon:last-child {
+    border-radius: 0 var(--sa-r) var(--sa-r) 0;
+}
+
+.stark-admin .has-error :is(.form-control, .input-group-addon) {
+    border-color: rgb(from var(--danger) r g b / 0.7);
+}
+
+.stark-admin .has-error :is(.help-block, .control-label) {
+    color: var(--danger) !important;
+}
+
+.stark-admin .has-success .form-control {
+    border-color: rgb(from var(--success) r g b / 0.7);
+}
+
+.stark-admin .has-warning .form-control {
+    border-color: rgb(from var(--warning) r g b / 0.7);
+}
+
+.stark-admin .radio label::before {
+    background-color: var(--sa-field);
+    border-color: var(--sa-field-edge);
+}
+
+.stark-admin .radio input[type='radio']:disabled + label::before {
+    background-color: rgb(from var(--surface-overlay) r g b / 0.45);
+}
+
+.stark-admin .radio label::after {
+    background-color: var(--ink-muted);
+}
+
+.stark-admin .radio-primary input[type='radio'] + label::after {
+    background-color: var(--accent);
+}
+
+.stark-admin .radio-primary input[type='radio']:checked + label::before {
+    border-color: var(--accent);
+}
+
+
+.stark-admin {
+    --sa-check-r: clamp(0px, calc(var(--radius-lg) * 0.625), 6px);
+    --sa-check-edge: rgb(from var(--ink-faint) r g b / 0.5);
+}
+
+.stark-admin .dz-check-box {
+    box-shadow: inset 0 0 0 1px var(--sa-check-edge);
+}
+
+.stark-admin input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *) {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin: 0 6px 0 0;
+    border: 0;
+    border-radius: var(--sa-check-r);
+    background: var(--sa-field);
+    box-shadow: inset 0 0 0 1px var(--sa-check-edge);
+    vertical-align: -4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stark-admin :is(
+    input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *),
+    .dz-check > input + span:not(.dz-check-box),
+    .pm-tick
+)::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--sa-on-accent);
+    border-width: 0 2px 2px 0;
+    font-size: 0;
+    line-height: 0;
+    opacity: 0;
+    transform: rotate(45deg) scale(0.4);
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.stark-admin input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *):hover:not(:disabled, :checked, :indeterminate),
+.stark-admin .dz-check:hover > input:not(:disabled, :checked) + span:not(.dz-check-box),
+.stark-admin .pm-egg:hover .pm-tick {
+    box-shadow: inset 0 0 0 1px var(--sa-field-hover);
+}
+
+.stark-admin input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *):is(:checked, :indeterminate),
+.stark-admin .dz-check > input:checked + span:not(.dz-check-box),
+.stark-admin .pm-egg.is-on .pm-tick {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.stark-admin input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *):checked::after,
+.stark-admin .dz-check > input:checked + span:not(.dz-check-box)::after,
+.stark-admin .pm-egg.is-on .pm-tick::after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+}
+
+.stark-admin input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *):indeterminate::after {
+    top: 8px;
+    left: 4px;
+    width: 10px;
+    height: 0;
+    border-width: 0 0 2px;
+    opacity: 1;
+    transform: none;
+}
+
+.stark-admin input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *):focus-visible,
+.stark-admin .dz-check > input:focus-visible + span:not(.dz-check-box) {
+    outline: none;
+    box-shadow: inset 0 0 0 1px var(--accent), 0 0 0 3px var(--sa-ring);
+}
+
+.stark-admin input[type='checkbox']:not(:is(.dz-switch, .dz-check, .pm-egg, .checkbox) *):disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.stark-admin .dz-check-box {
+    border-radius: var(--sa-check-r);
+}
+
+.stark-admin .dz-check > input + span:not(.dz-check-box) {
+    border: 0;
+    border-radius: var(--sa-check-r);
+    background: var(--sa-field);
+    box-shadow: inset 0 0 0 1px var(--sa-check-edge);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stark-admin .dz-check > input:disabled + span:not(.dz-check-box) {
+    background: rgb(from var(--surface-overlay) r g b / 0.45);
+}
+
+.stark-admin .dz-check > input:disabled + span:not(.dz-check-box)::after {
+    border-color: var(--ink-muted);
+    opacity: 0.45;
+    transform: rotate(45deg) scale(1);
+}
+
+.stark-admin .checkbox label::before {
+    top: 1px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    border-radius: var(--sa-check-r);
+    background-color: var(--sa-field);
+    box-shadow: inset 0 0 0 1px var(--sa-check-edge);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stark-admin .checkbox input[type='checkbox']:checked + label::before {
+    background-color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.stark-admin .checkbox input[type='checkbox']:checked + label::after {
+    content: '';
+    top: 4px;
+    left: 6px;
+    width: 4px;
+    height: 8px;
+    margin-left: -20px;
+    padding: 0;
+    border: solid var(--sa-on-accent);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.stark-admin .checkbox input[type='checkbox']:disabled + label::before {
+    background-color: rgb(from var(--surface-overlay) r g b / 0.45);
+}
+
+.stark-admin .pm-egg,
+.stark-admin .pm-egg:hover,
+.stark-admin .pm-egg.is-on {
+    background: transparent;
+    border-color: transparent;
+}
+
+.stark-admin .pm-egg.is-on .pm-egg-name {
+    font-weight: inherit;
+}
+
+.stark-admin .pm-tick {
+    position: relative;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    border-radius: var(--sa-check-r);
+    background: var(--sa-field);
+    box-shadow: inset 0 0 0 1px var(--sa-check-edge);
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stark-admin .pm-tick .fa {
+    display: none;
+}
+
+
+.stark-admin .btn {
+    border-radius: var(--sa-r);
+    font-weight: 500;
+    box-shadow: none;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.stark-admin :is(.btn-sm, .btn-xs, .btn-group-sm > .btn, .btn-group-xs > .btn) {
+    border-radius: var(--sa-r-sm);
+}
+
+.stark-admin .btn.btn-default {
+    background-color: var(--surface-overlay);
+    border-color: var(--sa-line);
+    color: var(--ink);
+}
+
+.stark-admin .btn.btn-default:is(:hover, :focus, :active, .active, .focus),
+.stark-admin .open > .btn.btn-default.dropdown-toggle {
+    background-color: var(--surface-raised);
+    border-color: var(--sa-line-strong);
+    color: var(--ink);
+}
+
+.stark-admin .btn.btn-primary {
+    background-color: var(--btn);
+    border-color: var(--btn);
+    color: var(--btn-ink);
+    font-weight: 600;
+}
+
+.stark-admin .btn.btn-primary:is(:hover, :focus, :active, .active, .focus),
+.stark-admin .open > .btn.btn-primary.dropdown-toggle {
+    background-color: rgb(from var(--btn) r g b / 0.88);
+    border-color: transparent;
+    color: var(--btn-ink);
+}
+
+.stark-admin .btn.btn-info {
+    background-color: var(--sa-tint);
+    border-color: rgb(from var(--accent) r g b / 0.3);
+    color: var(--accent);
+}
+
+.stark-admin .btn.btn-info:is(:hover, :focus, :active, .active, .focus) {
+    background-color: rgb(from var(--accent) r g b / 0.2);
+    border-color: rgb(from var(--accent) r g b / 0.45);
+    color: var(--accent);
+}
+
+.stark-admin .btn.btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: rgb(from var(--success) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255));
+}
+
+.stark-admin .btn.btn-warning {
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color: rgb(from var(--warning) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255) clamp(0, (186 - (0.299 * r + 0.587 * g + 0.114 * b)) * 255, 255));
+}
+
+.stark-admin .btn.btn-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color: rgb(255 255 255);
+}
+
+.stark-admin .btn:is(.btn-success, .btn-warning, .btn-danger):is(:hover, :focus, :active, .active, .focus) {
+    border-color: transparent;
+    filter: brightness(0.92);
+}
+
+.stark-admin .btn.btn-link {
+    color: var(--accent);
+}
+
+.stark-admin .btn.btn-link:hover {
+    color: rgb(from var(--accent) r g b / 0.8);
+}
+
+.stark-admin .btn:is([disabled], .disabled),
+.stark-admin fieldset[disabled] .btn {
+    opacity: 0.5;
+}
+
+.stark-admin .btn-group .btn.active {
+    box-shadow: none;
+}
+
+
+.stark-admin .label {
+    padding: 0.3em 0.65em;
+    border-radius: var(--sa-r-sm);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.stark-admin .label.label-default {
+    background-color: var(--surface-overlay) !important;
+    color: var(--ink-muted) !important;
+}
+
+.stark-admin .label:is(.label-primary, .bg-blue, .bg-light-blue) {
+    background-color: rgb(from var(--accent) r g b / 0.16) !important;
+    color: var(--accent) !important;
+}
+
+.stark-admin .label:is(.label-info, .bg-aqua) {
+    background-color: rgb(from var(--accent-alt) r g b / 0.16) !important;
+    color: var(--accent-alt) !important;
+}
+
+.stark-admin .label:is(.label-success, .bg-green) {
+    background-color: rgb(from var(--success) r g b / 0.16) !important;
+    color: var(--success) !important;
+}
+
+.stark-admin .label:is(.label-warning, .bg-yellow, .bg-orange) {
+    background-color: rgb(from var(--warning) r g b / 0.16) !important;
+    color: var(--warning) !important;
+}
+
+.stark-admin .label:is(.label-danger, .bg-red, .bg-maroon) {
+    background-color: rgb(from var(--danger) r g b / 0.16) !important;
+    color: var(--danger) !important;
+}
+
+.stark-admin .badge {
+    background-color: var(--surface-overlay);
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.stark-admin .bg-gray {
+    background-color: var(--surface-overlay) !important;
+    color: var(--ink) !important;
+}
+
+.stark-admin .progress {
+    background: var(--surface-overlay);
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+.stark-admin .progress.progress-table-bottom {
+    border-radius: 0;
+}
+
+.stark-admin .progress-bar {
+    background-color: var(--accent);
+}
+
+.stark-admin :is(.progress-bar-success, .progress-bar-green) {
+    background-color: var(--success);
+}
+
+.stark-admin :is(.progress-bar-warning, .progress-bar-yellow) {
+    background-color: var(--warning);
+}
+
+.stark-admin :is(.progress-bar-danger, .progress-bar-red) {
+    background-color: var(--danger);
+}
+
+
+.stark-admin .alert {
+    border-radius: var(--sa-r-lg);
+}
+
+.stark-admin :is(.alert, .callout) {
+    --sa-tone: var(--accent);
+
+    background: color-mix(in srgb, var(--sa-tone) 11%, var(--surface-card)) !important;
+    border: 1px solid rgb(from var(--sa-tone) r g b / 0.3) !important;
+    color: var(--ink) !important;
+}
+
+.stark-admin :is(.alert-success, .callout-success) {
+    --sa-tone: var(--success);
+}
+
+.stark-admin :is(.alert-warning, .callout-warning) {
+    --sa-tone: var(--warning);
+}
+
+.stark-admin :is(.alert-danger, .alert-error, .callout-danger) {
+    --sa-tone: var(--danger);
+}
+
+.stark-admin .callout-default {
+    --sa-tone: var(--ink-faint);
+}
+
+.stark-admin .callout {
+    border-left: 3px solid var(--sa-tone) !important;
+    border-radius: var(--sa-r);
+}
+
+.stark-admin .callout.callout-slim {
+    background: transparent !important;
+    border: 1px solid rgb(from var(--sa-tone) r g b / 0.3) !important;
+    border-left: 3px solid var(--sa-tone) !important;
+    color: var(--ink) !important;
+}
+
+.stark-admin :is(.alert, .callout) :is(a, .alert-link) {
+    color: inherit !important;
+    text-decoration: underline;
+}
+
+.stark-admin :is(.alert, .callout) :is(h4, strong) {
+    color: var(--ink);
+}
+
+.stark-admin .callout code {
+    background: rgb(from var(--ink) r g b / 0.06);
+    border-color: var(--sa-line);
+    color: var(--ink);
+}
+
+.stark-admin .alert .close {
+    color: var(--ink);
+    text-shadow: none;
+    opacity: 0.5;
+}
+
+.stark-admin .alert .close:hover {
+    opacity: 0.85;
+}
+
+
+.stark-admin .nav-tabs-custom > .nav-tabs {
+    padding: 6px 6px 0;
+    border-bottom: 1px solid var(--sa-line);
+}
+
+.stark-admin .nav-tabs-custom.nav-tabs-floating > .nav-tabs {
+    padding-bottom: 6px;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li {
+    margin: 0 2px 0 0;
+    border-top: 0;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li > a,
+.stark-admin .nav-tabs-custom > .nav-tabs > li.active > a,
+.stark-admin .nav-tabs-custom > .nav-tabs > li.active:hover > a {
+    margin: 0 0 6px;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: var(--sa-r) !important;
+    background: transparent;
+    color: var(--ink-muted);
+}
+
+.stark-admin .nav-tabs-custom.nav-tabs-floating > .nav-tabs > li > a {
+    margin-bottom: 0;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li > a:hover {
+    background: var(--sa-hover);
+    color: var(--ink);
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li.active > a,
+.stark-admin .nav-tabs-custom > .nav-tabs > li.active:hover > a {
+    background: var(--sa-tint) !important;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li.tab-danger.active > a {
+    background: rgb(from var(--danger) r g b / 0.14) !important;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li.tab-success.active > a {
+    background: rgb(from var(--success) r g b / 0.14) !important;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li.tab-warning.active > a {
+    background: rgb(from var(--warning) r g b / 0.14) !important;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li.tab-info.active > a {
+    background: rgb(from var(--accent-alt) r g b / 0.14) !important;
+}
+
+.stark-admin .nav-tabs-custom > .nav-tabs > li.header {
+    color: var(--ink);
+}
+
+.stark-admin .nav-tabs-custom > .tab-content {
+    background: transparent;
+    border-radius: 0 0 var(--sa-r-lg) var(--sa-r-lg);
+}
+
+.stark-admin .nav-tabs {
+    border-bottom-color: var(--sa-line);
+}
+
+.stark-admin .nav-tabs > li > a {
+    color: var(--ink-muted);
+}
+
+.stark-admin .nav-tabs > li > a:hover {
+    background: var(--sa-hover);
+    border-color: transparent;
+    color: var(--ink);
+}
+
+.stark-admin .nav-tabs > li.active > a,
+.stark-admin .nav-tabs > li.active > a:is(:hover, :focus) {
+    background: var(--surface-card);
+    border-color: var(--sa-line) var(--sa-line) transparent;
+    color: var(--ink);
+}
+
+.stark-admin .nav-pills > li > a {
+    border-radius: var(--sa-r);
+    border-top: 0;
+    color: var(--ink-muted);
+}
+
+.stark-admin .nav-pills > li > a:hover {
+    background: var(--sa-hover);
+    color: var(--ink);
+}
+
+.stark-admin .nav-pills > li.active > a,
+.stark-admin .nav-pills > li.active > a:is(:hover, :focus) {
+    background: var(--sa-tint);
+    border-top: 0;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.stark-admin .nav-stacked > li > a {
+    border-left: 0;
+}
+
+.stark-admin .list-group-item {
+    background: transparent;
+    border-color: var(--sa-line);
+    color: var(--ink);
+}
+
+.stark-admin .list-group-item:first-child {
+    border-radius: var(--sa-r) var(--sa-r) 0 0;
+}
+
+.stark-admin .list-group-item:last-child {
+    border-radius: 0 0 var(--sa-r) var(--sa-r);
+}
+
+.stark-admin a.list-group-item:hover {
+    background: var(--sa-hover);
+}
+
+.stark-admin .list-group-item.active {
+    background: var(--sa-tint);
+    border-color: rgb(from var(--accent) r g b / 0.3);
+    color: var(--ink);
+}
+
+
+.stark-admin .pagination > li > :is(a, span) {
+    margin-left: 4px;
+    background: var(--surface-raised);
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r-sm) !important;
+    color: var(--ink-muted);
+}
+
+.stark-admin .pagination > li > :is(a, span):is(:hover, :focus) {
+    background: var(--surface-overlay);
+    color: var(--ink);
+}
+
+.stark-admin .pagination > .active > :is(a, span),
+.stark-admin .pagination > .active > :is(a, span):is(:hover, :focus) {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--sa-on-accent);
+}
+
+.stark-admin .pagination > .disabled > :is(a, span),
+.stark-admin .pagination > .disabled > :is(a, span):is(:hover, :focus) {
+    background: var(--surface-raised);
+    color: var(--ink-faint);
+    opacity: 0.6;
+}
+
+
+.stark-admin .dropdown-menu {
+    padding: 4px;
+    background: var(--surface-overlay);
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r);
+    box-shadow: 0 16px 40px -16px rgb(0 0 0 / 0.55);
+}
+
+.stark-admin .dropdown-menu > li > a {
+    border-radius: var(--sa-r-sm);
+    color: var(--ink);
+}
+
+.stark-admin .dropdown-menu > li > a:is(:hover, :focus) {
+    background: var(--sa-hover);
+    color: var(--ink);
+}
+
+.stark-admin .dropdown-menu > .active > a,
+.stark-admin .dropdown-menu > .active > a:is(:hover, :focus) {
+    background: var(--sa-tint);
+    color: var(--ink);
+}
+
+.stark-admin .dropdown-menu .divider {
+    background: var(--sa-line);
+}
+
+.stark-admin .dropdown-header {
+    color: var(--ink-faint);
+}
+
+.stark-admin .modal-content {
+    background: var(--surface-card);
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r-lg);
+    box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.6);
+    color: var(--ink);
+    overflow: hidden;
+}
+
+.stark-admin :is(.modal-header, .modal-body, .modal-footer) {
+    background: transparent;
+    border-color: var(--sa-line);
+}
+
+.stark-admin .modal-header .close {
+    color: var(--ink);
+    text-shadow: none;
+    opacity: 0.5;
+}
+
+.stark-admin .modal-header .close:hover {
+    opacity: 0.85;
+}
+
+.stark-admin .modal-backdrop.in {
+    opacity: 0.6;
+}
+
+.stark-admin :is(.modal-danger, .modal-warning, .modal-info, .modal-success, .modal-primary) .modal-content {
+    border-color: var(--sa-line);
+}
+
+.stark-admin :is(.modal-danger, .modal-warning, .modal-info, .modal-success, .modal-primary) :is(.modal-header, .modal-body, .modal-footer) {
+    background: transparent !important;
+    color: var(--ink) !important;
+}
+
+.stark-admin .tooltip-inner {
+    padding: 5px 9px;
+    background: var(--hud-surface);
+    border-radius: var(--sa-r-sm);
+    color: rgb(226 232 240);
+    font-weight: 500;
+}
+
+.stark-admin .tooltip.top .tooltip-arrow {
+    border-top-color: var(--hud-surface);
+}
+
+.stark-admin .tooltip.bottom .tooltip-arrow {
+    border-bottom-color: var(--hud-surface);
+}
+
+.stark-admin .tooltip.left .tooltip-arrow {
+    border-left-color: var(--hud-surface);
+}
+
+.stark-admin .tooltip.right .tooltip-arrow {
+    border-right-color: var(--hud-surface);
+}
+
+.stark-admin .popover {
+    background: var(--surface-overlay);
+    border-color: var(--sa-line);
+    border-radius: var(--sa-r);
+    color: var(--ink);
+}
+
+.stark-admin .popover-title {
+    background: transparent;
+    border-color: var(--sa-line);
+}
+
+
+.stark-admin .select2-container--default :is(.select2-selection--single, .select2-selection--multiple),
+.stark-admin .select2-selection .select2-selection--single {
+    background-color: var(--sa-field);
+    border: 1px solid var(--sa-field-edge);
+    border-radius: var(--sa-r);
+}
+
+.stark-admin .select2-container--default:is(.select2-container--focus, .select2-container--open) :is(.select2-selection--single, .select2-selection--multiple) {
+    border-color: rgb(from var(--accent) r g b / 0.6) !important;
+    background-color: var(--surface-raised);
+}
+
+.stark-admin .select2-container--default .select2-selection--single .select2-selection__rendered,
+.stark-admin .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    color: var(--ink);
+}
+
+.stark-admin .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: var(--ink-faint);
+}
+
+.stark-admin .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-top-color: var(--ink-faint);
+}
+
+.stark-admin .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-bottom-color: var(--ink-faint);
+}
+
+.stark-admin .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background: var(--sa-tint);
+    border: 1px solid rgb(from var(--accent) r g b / 0.3);
+    border-radius: var(--sa-r-sm);
+    color: var(--ink);
+}
+
+.stark-admin .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: var(--ink-muted);
+}
+
+.stark-admin .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: var(--danger);
+}
+
+.stark-admin .select2-container--default :is(.select2-search--inline, .select2-search--dropdown) .select2-search__field {
+    color: var(--ink);
+}
+
+.stark-admin .select2-container--default .select2-search--dropdown .select2-search__field {
+    background-color: var(--sa-field);
+    border: 1px solid var(--sa-field-edge) !important;
+    border-radius: var(--sa-r-sm);
+}
+
+.stark-admin .select2-dropdown {
+    background-color: var(--surface-overlay);
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r);
+    box-shadow: 0 16px 40px -16px rgb(0 0 0 / 0.55);
+    overflow: hidden;
+}
+
+.stark-admin .select2-results__option {
+    background-color: transparent;
+    color: var(--ink);
+}
+
+.stark-admin .select2-container--default .select2-results__group {
+    color: var(--ink-faint);
+}
+
+.stark-admin .select2-container--default .select2-results__option[aria-selected='true'],
+.stark-admin .select2-container--default .select2-results__option[aria-selected='true']:hover {
+    background-color: var(--sa-tint);
+    color: var(--ink);
+}
+
+.stark-admin .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: rgb(from var(--accent) r g b / 0.22);
+    color: var(--ink);
+}
+
+.stark-admin .select2-container--default .select2-results__option[aria-disabled='true'] {
+    color: var(--ink-faint);
+}
+
+.stark-admin li.select2-results__option--highlighted[aria-selected='false'] > .user-block > .username > a {
+    color: var(--ink);
+}
+
+.stark-admin li.select2-results__option--highlighted[aria-selected='false'] > .user-block > .description {
+    color: var(--ink-muted);
+}
+
+.stark-admin .user-block .username a {
+    color: var(--ink);
+}
+
+.stark-admin .user-block .description {
+    color: var(--ink-muted);
+}
+
+
+.stark-admin .sweet-overlay {
+    background-color: rgb(0 0 0 / 0.6);
+}
+
+.stark-admin .sweet-alert {
+    background: var(--surface-card);
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r-lg);
+    box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.6);
+    font-family: var(--font-sans);
+}
+
+.stark-admin .sweet-alert h2 {
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.stark-admin .sweet-alert p {
+    color: var(--ink-muted);
+}
+
+.stark-admin .sweet-alert button {
+    border-radius: var(--sa-r);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.stark-admin .sweet-alert button.cancel {
+    background-color: var(--surface-overlay);
+    color: var(--ink);
+}
+
+.stark-admin .sweet-alert button.cancel:hover {
+    background-color: var(--surface-raised);
+}
+
+.stark-admin .sweet-alert fieldset input {
+    background: var(--sa-field);
+    border: 1px solid var(--sa-field-edge);
+    border-radius: var(--sa-r);
+    box-shadow: none;
+    color: var(--ink);
+}
+
+.stark-admin .sweet-alert .sa-icon.sa-success .sa-fix,
+.stark-admin .sweet-alert .sa-icon.sa-success::before,
+.stark-admin .sweet-alert .sa-icon.sa-success::after {
+    background-color: var(--surface-card);
+}
+
+
+.stark-admin:not(.light) .ace-chrome {
+    background: var(--surface-raised);
+    color: var(--ink);
+}
+
+.stark-admin:not(.light) .ace-chrome .ace_gutter {
+    background: var(--surface-card);
+    color: var(--ink-faint);
+}
+
+.stark-admin:not(.light) .ace-chrome :is(.ace_gutter-active-line, .ace_marker-layer .ace_active-line) {
+    background: var(--sa-hover);
+}
+
+.stark-admin:not(.light) .ace-chrome .ace_marker-layer .ace_selection {
+    background: rgb(from var(--accent) r g b / 0.28);
+}
+
+.stark-admin:not(.light) .ace-chrome .ace_marker-layer .ace_bracket {
+    border-color: var(--sa-line-strong);
+}
+
+.stark-admin:not(.light) .ace-chrome .ace_cursor {
+    color: var(--ink);
+}
+
+.stark-admin:not(.light) .ace-chrome .ace_print-margin {
+    background: var(--sa-line);
+}
+
+.stark-admin:not(.light) .ace-chrome .ace_indent-guide {
+    background: linear-gradient(to right, var(--sa-line) 1px, transparent 1px);
+}
+
+.stark-admin:not(.light) .ace-chrome :is(.ace_keyword, .ace_storage, .ace_meta.ace_tag) {
+    color: rgb(199 146 234);
+}
+
+.stark-admin:not(.light) .ace-chrome :is(.ace_keyword.ace_operator, .ace_punctuation, .ace_paren) {
+    color: rgb(137 221 255);
+}
+
+.stark-admin:not(.light) .ace-chrome :is(.ace_string, .ace_string.ace_regexp) {
+    color: rgb(195 232 141);
+}
+
+.stark-admin:not(.light) .ace-chrome .ace_comment {
+    color: rgb(127 142 163);
+}
+
+.stark-admin:not(.light) .ace-chrome :is(.ace_constant, .ace_constant.ace_numeric, .ace_constant.ace_language) {
+    color: rgb(247 140 108);
+}
+
+.stark-admin:not(.light) .ace-chrome :is(.ace_variable, .ace_support.ace_function, .ace_entity.ace_name.ace_function, .ace_support.ace_constant) {
+    color: rgb(130 170 255);
+}
+
+
+.stark-admin .img-bordered-xs,
+.stark-admin .img-bordered-sm {
+    border-color: var(--sa-line);
+}
+
+.stark-admin .grecaptcha-badge {
+    background: var(--surface-card);
+}
+
+.stark-admin .hasFileHover {
+    border-color: var(--accent);
+}
+
+
+.stark-admin .main-header .navbar :is(.navbar-custom-menu > .nav > li > a, .sidebar-toggle) {
+    margin: 7px 3px;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: var(--surface-raised);
+    box-shadow: inset 0 0 0 1px var(--sa-line);
+    line-height: 20px;
+}
+
+.stark-admin .main-header .navbar .sidebar-toggle {
+    margin-left: 10px;
+    padding: 8px 12px;
+}
+
+.stark-admin .main-header .navbar .navbar-custom-menu > .nav > li.user-menu > a {
+    padding: 5px 15px 5px 5px;
+    line-height: 26px;
+}
+
+.stark-admin .main-header .navbar .user-menu .user-image {
+    width: 26px;
+    height: 26px;
+    margin: 0 9px 0 0;
+}
+
+.stark-admin .main-header .navbar .navbar-custom-menu > .nav > li:last-child > a {
+    margin-right: 12px;
+}
+
+@media (max-width: 767px) {
+    .stark-admin .main-header .navbar .navbar-custom-menu > .nav > li.user-menu > a {
+        padding-right: 5px;
+    }
+
+    .stark-admin .main-header .navbar .user-menu .user-image {
+        margin-right: 0;
+    }
+}
+
+.stark-admin .stark-mode-switch .fa {
+    animation: sa-spin-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes sa-spin-in {
+    from {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.6);
+    }
+}
+
+
+.stark-admin::view-transition-old(root),
+.stark-admin::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+.stark-admin::view-transition-new(root) {
+    animation: sa-reveal 0.55s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@keyframes sa-reveal {
+    from {
+        clip-path: circle(0 at var(--sa-x, 100%) var(--sa-y, 0));
+    }
+
+    to {
+        clip-path: circle(150vmax at var(--sa-x, 100%) var(--sa-y, 0));
+    }
+}
+
+
+.stark-admin[data-sa-button] .btn:not(.btn-link, .btn-box-tool) {
+    position: relative;
+    isolation: isolate;
+}
+
+.stark-admin[data-sa-button='press'] .btn:not(.btn-link, .btn-box-tool):active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.stark-admin:is([data-sa-button='lift'], [data-sa-button='grow']) .btn:not(.btn-link, .btn-box-tool) {
+    transition:
+        transform 160ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 160ms cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.15s,
+        border-color 0.15s,
+        color 0.15s;
+}
+
+.stark-admin[data-sa-button='lift'] .btn:not(.btn-link, .btn-box-tool):hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px -12px rgb(0 0 0 / 0.6);
+}
+
+.stark-admin[data-sa-button='lift'] .btn:not(.btn-link, .btn-box-tool):active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.stark-admin[data-sa-button='grow'] .btn:not(.btn-link, .btn-box-tool):hover:not(:disabled) {
+    transform: scale(1.035);
+}
+
+.stark-admin[data-sa-button='grow'] .btn:not(.btn-link, .btn-box-tool):active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.stark-admin[data-sa-button='glint'] .btn:not(.btn-link, .btn-box-tool) {
+    overflow: hidden;
+}
+
+.stark-admin[data-sa-button='glint'] .btn:not(.btn-link, .btn-box-tool)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / 0.28) 50%, transparent 70%);
+    transform: translateX(-140%) skewX(-20deg);
+}
+
+.stark-admin[data-sa-button='glint'] .btn:not(.btn-link, .btn-box-tool):hover:not(:disabled)::after {
+    animation: sa-glint 720ms ease-out;
+}
+
+.stark-admin[data-sa-button='pulse'] .btn:not(.btn-link, .btn-box-tool):hover:not(:disabled) {
+    animation: sa-pulse 1.4s ease-out infinite;
+}
+
+.stark-admin[data-sa-button='slide'] .btn:not(.btn-link, .btn-box-tool)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: rgb(255 255 255 / 0.16);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.stark-admin[data-sa-button='slide'] .btn:not(.btn-link, .btn-box-tool):hover:not(:disabled)::before {
+    transform: scaleX(1);
+}
+
+@keyframes sa-glint {
+    from {
+        transform: translateX(-140%) skewX(-20deg);
+    }
+
+    to {
+        transform: translateX(240%) skewX(-20deg);
+    }
+}
+
+@keyframes sa-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgb(from var(--accent) r g b / 0.45);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgb(from var(--accent) r g b / 0);
+    }
+}
+
+
+.stark-admin[data-sa-page='fade'] .content-wrapper > :is(.content-header, .content) {
+    animation: sa-page-fade 220ms ease-out backwards;
+}
+
+.stark-admin[data-sa-page='rise'] .content-wrapper > :is(.content-header, .content) {
+    animation: sa-page-rise 280ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.stark-admin[data-sa-page='slide'] .content-wrapper > :is(.content-header, .content) {
+    animation: sa-page-slide 280ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.stark-admin[data-sa-page='scale'] .content-wrapper > :is(.content-header, .content) {
+    animation: sa-page-scale 240ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.stark-admin[data-sa-page='blur'] .content-wrapper > :is(.content-header, .content) {
+    animation: sa-page-blur 300ms ease-out backwards;
+}
+
+.stark-admin .content-wrapper > .content {
+    animation-delay: 40ms;
+}
+
+@keyframes sa-page-fade {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes sa-page-rise {
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
+}
+
+@keyframes sa-page-slide {
+    from {
+        opacity: 0;
+        transform: translateX(1.25rem);
+    }
+}
+
+@keyframes sa-page-scale {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes sa-page-blur {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stark-admin .content-wrapper > :is(.content-header, .content),
+    .stark-admin .stark-mode-switch .fa,
+    .stark-admin .btn:not(.btn-link, .btn-box-tool) {
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .stark-admin .btn:not(.btn-link, .btn-box-tool)::after {
+        display: none;
+    }
+}
+
+
+.stark-admin :is(.btn, .btn:active, .btn.active):focus:not(:focus-visible) {
+    outline: none;
+}
+
+:where(.stark-admin) :is(a, button, .btn, summary):focus-visible {
+    outline: 2px solid rgb(from var(--accent) r g b / 0.7);
+    outline-offset: 2px;
+}
+
+.stark-admin .form-control:focus,
+.stark-admin .select2-container--default:is(.select2-container--focus, .select2-container--open) :is(.select2-selection--single, .select2-selection--multiple) {
+    box-shadow: 0 0 0 3px rgb(from var(--accent) r g b / 0.12);
+}
+
+
+.stark-admin .table > tbody > tr {
+    transition: background-color 0.12s;
+}
+
+.stark-admin ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.stark-admin ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.stark-admin ::-webkit-scrollbar-thumb {
+    background: var(--surface-overlay);
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+}
+
+.stark-admin .main-footer .stark-footer-brand {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.stark-admin .main-footer .stark-footer-brand:hover {
+    color: var(--accent);
+}
+
+.stark-admin .main-footer .stark-footer-note,
+.stark-admin .main-footer .stark-footer-note a {
+    color: var(--ink-faint) !important;
+}
+
+
+.stark-admin label.control-label > .sa-hint {
+    color: inherit !important;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: inherit;
+}
+
+.stark-admin .sa-hint-bubble :is(small, .small) {
+    font-size: inherit;
+}
+
+.stark-admin .sa-hint-icon {
+    margin: 0 0 0 6px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink-faint);
+    font-size: 13px;
+    line-height: 1;
+    vertical-align: 0;
+    cursor: help;
+    transition: color 0.15s;
+}
+
+.stark-admin .sa-hint-icon:hover,
+.stark-admin .sa-hint.is-open .sa-hint-icon {
+    color: var(--accent);
+}
+
+.stark-admin .sa-hint-bubble {
+    position: fixed;
+    z-index: 1060;
+    display: none;
+    width: max-content;
+    max-width: min(340px, calc(100vw - 16px));
+    max-height: 50vh;
+    overflow: auto;
+    padding: 10px 12px;
+    border: 1px solid var(--sa-line);
+    border-radius: var(--sa-r);
+    background: var(--surface-overlay);
+    box-shadow: 0 16px 40px -16px rgb(0 0 0 / 0.55);
+    color: var(--ink-muted);
+    font-size: 12.5px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: normal;
+    text-align: left;
+    text-transform: none;
+    white-space: normal;
+    cursor: auto;
+}
+
+.stark-admin .sa-hint.is-open > .sa-hint-bubble {
+    display: block;
+    animation: sa-hint-in 0.14s ease-out;
+}
+
+.stark-admin .sa-hint-bubble > :not([hidden]) {
+    display: block;
+    margin: 0 !important;
+    color: var(--ink-muted) !important;
+    font-size: inherit;
+}
+
+.stark-admin .sa-hint-bubble > * + * {
+    margin-top: 8px !important;
+}
+
+.stark-admin .sa-hint-bubble :is(strong, b) {
+    color: var(--ink);
+}
+
+@keyframes sa-hint-in {
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+}
+
+
+.stark-admin .stark-feature-text span {
+    font-size: 11.5px;
+    line-height: 1.45;
+}
+
+.stark-admin .dzo-chart {
+    background: var(--sa-chart-bg);
+}
+
+.stark-admin .box > .dzo-chart:last-child {
+    border-radius: 0 0 calc(var(--sa-r-lg) - 1px) calc(var(--sa-r-lg) - 1px);
+}

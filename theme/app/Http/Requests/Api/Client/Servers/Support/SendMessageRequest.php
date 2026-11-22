@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Support; use Pterodactyl\Models\Dezerx\StaffMessage; use Pterodactyl\Models\Permission; use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest; class SendMessageRequest extends ClientApiRequest { public function permission(): string { return Permission::ACTION_USER_READ; } public function rules(): array { return [ 'body' => ['required', 'string', 'min:1', 'max:' . StaffMessage::MAX_LENGTH], ]; } } 

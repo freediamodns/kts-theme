@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Addons; use Pterodactyl\Models\Permission; class FiveMWriteRequest extends AddonRequest { public function permission(): string { return Permission::ACTION_FILE_UPDATE; } } 

@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Addons; use Pterodactyl\Models\Permission; use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest; class AddonRequest extends ClientApiRequest { public function permission(): string { return Permission::ACTION_FILE_READ; } } 

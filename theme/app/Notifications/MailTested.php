@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Notifications; use Pterodactyl\Models\User; use Pterodactyl\Services\Dezerx\Emails; use Illuminate\Notifications\Notification; use Illuminate\Notifications\Messages\MailMessage; class MailTested extends Notification { public function __construct(private User $user) { } public function via(): array { return ['mail']; } public function toMail(): MailMessage { return Emails::apply(new MailMessage(), 'mail-tested', [ 'name' => (string) $this->user->name, ]); } } 

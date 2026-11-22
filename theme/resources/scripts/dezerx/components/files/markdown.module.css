@@ -1,0 +1,276 @@
+.prose {
+    color: rgb(from var(--ink) r g b);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.prose > :first-child {
+    margin-top: 0;
+}
+
+.prose > :last-child {
+    margin-bottom: 0;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    margin: 1.6em 0 0.6em;
+    font-weight: 650;
+    line-height: 1.3;
+    color: rgb(from var(--ink) r g b);
+}
+
+.prose h1 {
+    font-size: 1.7em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid rgb(var(--line-rgb) / 0.5);
+}
+
+.prose h2 {
+    font-size: 1.35em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid rgb(var(--line-rgb) / 0.35);
+}
+
+.prose h3 {
+    font-size: 1.15em;
+}
+
+.prose h4,
+.prose h5,
+.prose h6 {
+    font-size: 1em;
+}
+
+.prose p,
+.prose blockquote,
+.prose ul,
+.prose ol,
+.prose pre,
+.prose table,
+.prose details {
+    margin: 0.85em 0;
+}
+
+.prose a {
+    color: rgb(from var(--accent) r g b);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.prose strong {
+    font-weight: 650;
+}
+
+.prose ul,
+.prose ol {
+    padding-left: 1.5em;
+}
+
+.prose ul {
+    list-style: disc;
+}
+
+.prose ul ul {
+    list-style: circle;
+}
+
+.prose ol {
+    list-style: decimal;
+}
+
+.prose li {
+    margin: 0.3em 0;
+}
+
+.prose li.task-list-item {
+    list-style: none;
+    margin-left: -1.4em;
+}
+
+.prose li.task-list-item input[type='checkbox'] {
+    margin-right: 0.5em;
+    vertical-align: middle;
+    accent-color: rgb(from var(--accent) r g b);
+}
+
+.prose blockquote {
+    padding: 0.1em 1em;
+    border-left: 3px solid rgb(from var(--accent) r g b / 0.55);
+    color: rgb(from var(--ink-muted) r g b);
+    background: rgb(from var(--surface-raised) r g b / 0.4);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose hr {
+    margin: 1.6em 0;
+    border: 0;
+    border-top: 1px solid rgb(var(--line-rgb) / 0.5);
+}
+
+.prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.prose code {
+    padding: 0.15em 0.4em;
+    font-family: var(--font-mono);
+    font-size: 0.87em;
+    background: rgb(from var(--surface-raised) r g b / 0.75);
+    border-radius: 0.35rem;
+}
+
+.prose pre {
+    padding: 0.9rem 1rem;
+    overflow-x: auto;
+    background: rgb(from var(--surface-base) r g b);
+    border: 1px solid rgb(var(--line-rgb) / 0.4);
+    border-radius: 0.65rem;
+}
+
+.prose pre code {
+    padding: 0;
+    background: none;
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+.prose table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+.prose th,
+.prose td {
+    padding: 0.45em 0.8em;
+    border: 1px solid rgb(var(--line-rgb) / 0.45);
+}
+
+.prose th {
+    background: rgb(from var(--surface-raised) r g b / 0.6);
+    font-weight: 600;
+    text-align: left;
+}
+
+.prose summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.prose kbd {
+    padding: 0.1em 0.45em;
+    font-family: var(--font-mono);
+    font-size: 0.82em;
+    border: 1px solid rgb(var(--line-rgb) / 0.7);
+    border-bottom-width: 2px;
+    border-radius: 0.3rem;
+}
+
+.prose :global(.hljs-comment),
+.prose :global(.hljs-quote) {
+    color: #637777;
+    font-style: italic;
+}
+
+.prose :global(.hljs-keyword),
+.prose :global(.hljs-selector-tag),
+.prose :global(.hljs-literal) {
+    color: #c792ea;
+}
+
+.prose :global(.hljs-string),
+.prose :global(.hljs-meta-string) {
+    color: #addb67;
+}
+
+.prose :global(.hljs-number),
+.prose :global(.hljs-symbol),
+.prose :global(.hljs-bullet) {
+    color: #f78c6c;
+}
+
+.prose :global(.hljs-title),
+.prose :global(.hljs-section),
+.prose :global(.hljs-name) {
+    color: #82aaff;
+}
+
+.prose :global(.hljs-attr),
+.prose :global(.hljs-attribute),
+.prose :global(.hljs-variable),
+.prose :global(.hljs-template-variable) {
+    color: #7fdbca;
+}
+
+.prose :global(.hljs-type),
+.prose :global(.hljs-built_in),
+.prose :global(.hljs-class .hljs-title) {
+    color: #ffcb8b;
+}
+
+.prose :global(.hljs-deletion) {
+    color: #ef5350;
+}
+
+.prose :global(.hljs-addition) {
+    color: #addb67;
+}
+
+.prose :global(.hljs-emphasis) {
+    font-style: italic;
+}
+
+.prose :global(.hljs-strong) {
+    font-weight: 600;
+}
+
+:global(:root.light) .prose :global(.hljs-comment),
+:global(:root.light) .prose :global(.hljs-quote) {
+    color: #6a737d;
+}
+
+:global(:root.light) .prose :global(.hljs-keyword),
+:global(:root.light) .prose :global(.hljs-selector-tag),
+:global(:root.light) .prose :global(.hljs-literal) {
+    color: #d73a49;
+}
+
+:global(:root.light) .prose :global(.hljs-string),
+:global(:root.light) .prose :global(.hljs-meta-string) {
+    color: #032f62;
+}
+
+:global(:root.light) .prose :global(.hljs-number),
+:global(:root.light) .prose :global(.hljs-symbol),
+:global(:root.light) .prose :global(.hljs-bullet) {
+    color: #005cc5;
+}
+
+:global(:root.light) .prose :global(.hljs-title),
+:global(:root.light) .prose :global(.hljs-section),
+:global(:root.light) .prose :global(.hljs-name) {
+    color: #6f42c1;
+}
+
+:global(:root.light) .prose :global(.hljs-attr),
+:global(:root.light) .prose :global(.hljs-attribute),
+:global(:root.light) .prose :global(.hljs-variable),
+:global(:root.light) .prose :global(.hljs-template-variable) {
+    color: #e36209;
+}
+
+:global(:root.light) .prose :global(.hljs-type),
+:global(:root.light) .prose :global(.hljs-built_in),
+:global(:root.light) .prose :global(.hljs-class .hljs-title) {
+    color: #22863a;
+}

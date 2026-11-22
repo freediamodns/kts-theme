@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Services\Dezerx\Ai; class AiReply { public function __construct( public readonly string $text, public readonly array $steps = [], public readonly bool $truncated = false, public readonly array $pending = [], ) { } public function waitingOn(array $pending): self { return new self($this->text, $this->steps, $this->truncated, $pending); } } 

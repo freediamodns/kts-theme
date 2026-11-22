@@ -1,0 +1,34 @@
+.editor {
+    position: relative;
+}
+
+.editor :global(.CodeMirror) {
+    height: 100%;
+    font-size: 12px;
+    line-height: 1.375rem;
+    font-family: var(--font-mono);
+    background: transparent;
+}
+
+.editor :global(.CodeMirror-gutters) {
+    background: transparent;
+    border-right: 1px solid rgb(from var(--line-rgb) r g b / calc(var(--field-line-alpha) + 0.04));
+}
+
+.editor :global(.CodeMirror-linenumber) {
+    padding: 1px 12px 0 12px !important;
+    color: var(--ink-faint);
+}
+
+.editor :global(.CodeMirror-foldmarker) {
+    color: var(--accent);
+    text-shadow: none;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.editor :global(.CodeMirror-overlayscroll-vertical div),
+.editor :global(.CodeMirror-overlayscroll-horizontal div) {
+    background: rgb(from var(--ink-faint) r g b / 0.35);
+    border-radius: 9999px;
+}

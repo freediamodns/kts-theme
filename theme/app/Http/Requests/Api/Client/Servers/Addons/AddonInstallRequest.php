@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Addons; use Pterodactyl\Models\Permission; class AddonInstallRequest extends AddonRequest { public function permission(): string { return Permission::ACTION_FILE_CREATE; } } 

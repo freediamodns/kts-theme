@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Services\Dezerx; use Throwable; use Pterodactyl\Models\Egg; class Eggs { public static function all(): array { try { $eggs = Egg::query() ->with('nest:id,name') ->orderBy('nest_id') ->orderBy('name') ->get(['id', 'uuid', 'name', 'nest_id']); } catch (Throwable) { return []; } return $eggs ->map(fn (Egg $egg) => [ 'uuid' => $egg->uuid, 'id' => $egg->id, 'name' => $egg->name, 'nest' => $egg->nest->name ?? 'Other', ]) ->values() ->all(); } } 

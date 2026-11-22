@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Players; use Pterodactyl\Models\Permission; class DeletePlayerRequest extends PlayerRequest { public function permission(): string { return Permission::ACTION_FILE_DELETE; } } 

@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers; use Pterodactyl\Models\Permission; use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest; class ShareConsoleLogRequest extends ClientApiRequest { public function permission(): string { return Permission::ACTION_WEBSOCKET_CONNECT; } public function rules(): array { return [ 'content' => 'required|string|min:1', ]; } } 

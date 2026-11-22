@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Middleware\Api\Client\Server; use Closure; use Illuminate\Http\Request; use Pterodactyl\Models\Server; use Symfony\Component\HttpKernel\Exception\NotFoundHttpException; use Pterodactyl\Services\Dezerx\Addons; class AddonEnabled { public function handle(Request $request, Closure $next, string $addon): mixed { $server = $request->route()->parameter('server'); if (!$server instanceof Server || !Addons::appliesTo($addon, $server)) { throw new NotFoundHttpException(); } return $next($request); } } 

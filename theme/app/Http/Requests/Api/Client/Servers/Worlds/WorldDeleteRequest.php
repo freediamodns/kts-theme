@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Worlds; use Pterodactyl\Models\Permission; class WorldDeleteRequest extends WorldRequest { public function permission(): string { return Permission::ACTION_FILE_DELETE; } } 

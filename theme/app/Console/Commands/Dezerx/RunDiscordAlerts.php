@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Console\Commands\Dezerx; use Illuminate\Console\Command; use Pterodactyl\Services\Dezerx\DiscordBot\AlertMonitor; class RunDiscordAlerts extends Command { protected $signature = 'dezerx:discord-alerts'; protected $description = 'Check every Discord resource alert and post the ones that fire.'; public function handle(AlertMonitor $monitor): int { $summary = $monitor->run(); $this->line(sprintf('Checked %d alerts, posted %d, %d failed.', $summary['checked'], $summary['posted'], $summary['failed'])); return 0; } } 

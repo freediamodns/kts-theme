@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Support; use Pterodactyl\Models\Permission; use Pterodactyl\Http\Requests\Api\Client\ClientApiRequest; class GetSupportRequest extends ClientApiRequest { public function permission(): string { return Permission::ACTION_USER_READ; } } 

@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Services\Dezerx\Importer; use Closure; interface RemoteFilesystem { public function open(): array; public function listing(string $path): ?array; public function walk(string $root, int $maxFiles, int $maxBytes, ?Closure $onProgress = null): array; public function openReadStream(string $path): mixed; public function isDirectory(string $path): bool; public function close(): void; } 

@@ -1,0 +1,8 @@
+
+@import '../dezerx/theme.css';
+
+@import '../dezerx/flags.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

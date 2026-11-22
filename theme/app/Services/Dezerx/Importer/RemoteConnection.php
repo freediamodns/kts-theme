@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Services\Dezerx\Importer; class RemoteConnection { public static function for(Credentials $credentials): RemoteFilesystem { return $credentials->mode === 'ftp' ? new FtpClient($credentials) : new SftpClient($credentials); } } 

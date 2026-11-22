@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Requests\Api\Client\Servers\Rust; use Pterodactyl\Models\Permission; class RustControlRequest extends RustReadRequest { public function permission(): string { return Permission::ACTION_CONTROL_CONSOLE; } } 

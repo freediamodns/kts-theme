@@ -1,0 +1,2 @@
+<?php
+ namespace Pterodactyl\Http\Middleware\Dezerx; use Closure; use Illuminate\Http\Request; use Pterodactyl\Services\Dezerx\Staff\Staff; use Symfony\Component\HttpKernel\Exception\NotFoundHttpException; class StaffEnabled { public function handle(Request $request, Closure $next, string $role = 'any'): mixed { if (!Staff::enabled()) { throw new NotFoundHttpException(); } if ($role === 'staff' && !Staff::canAct($request->user())) { throw new NotFoundHttpException(); } return $next($request); } } 

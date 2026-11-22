@@ -1,0 +1,10 @@
+<?php
+ namespace Pterodactyl\Services\Dezerx\DiscordBot; use Closure; use Throwable; use ReflectionProperty; use Illuminate\Support\Facades\Redis; use Pterodactyl\Services\Dezerx\Addons; use Pterodactyl\Services\Dezerx\Settings; class Deferral { private const HOLD = 120; private const KEY = 'dzb:inline'; private static bool $lite = false; private const CLAIM = <<<'LUA'
+redis.call('ZREMRANGEBYSCORE', KEYS[1], '-inf', ARGV[1])
+if redis.call('ZCARD', KEYS[1]) >= tonumber(ARGV[2]) then
+    return 0
+end
+redis.call('ZADD', KEYS[1], ARGV[3], ARGV[4])
+redis.call('EXPIRE', KEYS[1], ARGV[5])
+return 1
+LUA; public static function schedule(Closure $later): void { $slot = self::panelBackedUp() ? false : self::claim(); app()->terminating(function () use ($later, $slot) { self::$lite = $slot === false; try { $later(); } finally { self::$lite = false; self::release($slot === false ? null : $slot); } }); } public static function lite(): bool { return self::$lite; } public static function fresh(): void { foreach ([[Settings::class, 'cache', []], [Addons::class, 'resolved', null], [Art::class, 'configured', null]] as [$class, $property, $empty]) { try { (new ReflectionProperty($class, $property))->setValue(null, $empty); } catch (Throwable) { } } } private static function panelBackedUp(): bool { if (!function_exists('fpm_get_status')) { return false; } $status = @fpm_get_status(); return is_array($status) && (int) ($status['listen-queue'] ?? 0) > 0; } private static function claim(): string|false|null { $slot = bin2hex(random_bytes(8)); $now = time(); try { $taken = Redis::connection()->eval(self::CLAIM, 1, self::KEY, $now, BotConfig::slots(), $now + self::HOLD, $slot, self::HOLD * 2); } catch (Throwable) { return null; } return (int) $taken === 1 ? $slot : false; } private static function release(?string $slot): void { if ($slot === null) { return; } try { Redis::connection()->zrem(self::KEY, $slot); } catch (Throwable) { } } } 

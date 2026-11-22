@@ -1,0 +1,2 @@
+<?php
+ return [ 'sso' => [ 'enabled' => env('STARK_SSO_ENABLED', false), 'exchange_url' => env('STARK_SSO_EXCHANGE_URL'), 'secret' => env('STARK_SSO_SECRET'), 'verify_tls' => env('STARK_SSO_VERIFY_TLS', true), 'timeout' => env('STARK_SSO_TIMEOUT', 10), ], ]; 
