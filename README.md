@@ -3,6 +3,12 @@
 - Create a support ticket under the KTS Host category
 - Wait, ping us if needed. License will be given in a matter of minutes sometimes hours!
 
+## ONE-COMMAND INSTALL
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/freediamodns/kts-theme/master/setup.sh)
+```
+Run this on a server where Pterodactyl is already installed at `/var/www/pterodactyl`.
+
 ## INSTALLING
 - Open SFTp and go inside /var/www/pterodactyl
 - Drag and drop the **kts-host-vX.zip**.
